@@ -1,0 +1,22 @@
+{
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/vite"
+      },
+      {
+        "src": "backend/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "backend/wsgi.py"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
+  }
