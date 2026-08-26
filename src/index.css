@@ -1,34 +1,5 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import "tailwindcss";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -51,11 +22,7 @@
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
+  width: 100%;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -108,4 +75,67 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+:root.theme-yellow {
+  /* Main Background - Exact match to logo background */
+  --color-bg: #fbc83b;
+
+  /* Typography - Drawn from the bold dark outlines in the illustration */
+  --color-text: #231F20;
+  --color-mainHeadings: #141213;
+  --color-secondaryHeadings: #4A3E10;
+
+  /* Input & Text Fields - Clean off-white sampled from the sky/cloud highlights */
+  --color-textFieldBg: #FFF9E6;
+  --color-textFieldText: #231F20;
+
+  /* Cards & Containers - Solid white for clean contrast against the golden yellow */
+  --color-borders: #D9A820;
+  --color-cards: #FFFFFF;
+  
+  /* Accent Cards - Sunset Orange sampled from the middle 'D' & front truck */
+  --color-secondaryCard: #F49D25;
+
+  /* Hero / Banner Accent - Sky Blue sampled from the top 'E' & 'D' letters */
+  --color-heroBg: #50A2C9;
+
+  /* Interactive Buttons - Deep Orange/Red from the map pin and truck accents */
+  --color-button: #E85D36;
+  --color-button-hover: #D24720;
+}
+:root.theme-blue {
+  /* Main Background - Exact match to blue logo background */
+  --color-bg: #3aa2f5;
+
+  /* Typography - Deep charcoal black for crisp contrast against the blue */
+  --color-text: #1C232B;
+  --color-mainHeadings: #0F141A;
+  --color-secondaryHeadings: #1E3A52;
+
+  /* Input & Text Fields - Soft ice-blue tint sampled from the cloud highlights */
+  --color-textFieldBg: #F2F8FC;
+  --color-textFieldText: #1C232B;
+
+  /* Cards & Containers - Clean white to make UI elements pop */
+  --color-borders: #2A88D8;
+  --color-cards: #FFFFFF;
+  
+  /* Accent Cards - Highway Green sampled from the roadside hills */
+  --color-secondaryCard: #5DB143;
+
+  /* Hero / Banner Accent - Golden Yellow sampled from the sunset & stars */
+  --color-heroBg: #FFC83B;
+
+  /* Interactive Buttons - High-visibility Orange/Red from the map pin & truck accents */
+  --color-button: #E85D36;
+  --color-button-hover: #D24720;
+}
+.custom-leaflet-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-leaflet-marker .eld-marker {
+  overflow: visible;
 }
