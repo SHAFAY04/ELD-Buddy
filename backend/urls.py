@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from eld.views import EldController
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/eld/',EldController.as_view(),name='eld_controller')
 ]
