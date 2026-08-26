@@ -53,22 +53,22 @@ function toLatLngList(list: RawCoord[] | undefined): LatLng[] {
   return (list ?? []).map(toLatLng)
 }
 
-function normalizeCoords(
-  input: RawCoord | RawCoord[] | undefined | null
-): LatLng[] {
-  if (!input) return []
+// function normalizeCoords(
+//   input: RawCoord | RawCoord[] | undefined | null
+// ): LatLng[] {
+//   if (!input) return []
 
-  const isSingleCoord =
-    (Array.isArray(input) && typeof input[0] === 'number') ||
-    (!Array.isArray(input) && 'lat' in (input as object))
+//   const isSingleCoord =
+//     (Array.isArray(input) && typeof input[0] === 'number') ||
+//     (!Array.isArray(input) && 'lat' in (input as object))
 
-  const coords = isSingleCoord
-    ? [toLatLng(input as RawCoord)]
-    : (input as RawCoord[]).map(toLatLng)
+//   const coords = isSingleCoord
+//     ? [toLatLng(input as RawCoord)]
+//     : (input as RawCoord[]).map(toLatLng)
 
-  // Filter out invalid/default [0, 0] coordinates
-  return coords.filter((c) => c.lat !== 0 || c.lng !== 0)
-}
+//   // Filter out invalid/default [0, 0] coordinates
+//   return coords.filter((c) => c.lat !== 0 || c.lng !== 0)
+// }
 
 // Custom Leaflet Pin Icons with visual badges
 function createCustomIcon(
