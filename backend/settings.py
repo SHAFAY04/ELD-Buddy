@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-bt5fdn%6_9r8h%6jt^%aa9&902fjr6+j4s&ed!3lg$7e4(it6z
 DEBUG = True
 
 # 1. Update ALLOWED_HOSTS (hostnames only, no protocol)
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost",".vercel.app",]
 
 # 2. Add CSRF_TRUSTED_ORIGINS (must include protocol scheme like http://)
 CSRF_TRUSTED_ORIGINS = [
