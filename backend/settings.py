@@ -10,6 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+import os
+import dj_database_url
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +32,14 @@ SECRET_KEY = 'django-insecure-bt5fdn%6_9r8h%6jt^%aa9&902fjr6+j4s&ed!3lg$7e4(it6z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# 1. Update ALLOWED_HOSTS (hostnames only, no protocol)
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+
+# 2. Add CSRF_TRUSTED_ORIGINS (must include protocol scheme like http://)
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
 
 
 # Application definition
