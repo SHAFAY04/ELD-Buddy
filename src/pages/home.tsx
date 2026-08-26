@@ -395,7 +395,7 @@ export default function Home() {
         </div>
 
         <div className="lg:w-3/5">
-          <div className="h-[420px] lg:mt-40 lg:h-[640px] w-full rounded-2xl overflow-hidden border-2 border-[var(--color-borders)] shadow-md">
+          <div className="h-[420px] lg:mt-52 lg:h-[640px] w-full rounded-2xl overflow-hidden border-2 border-[var(--color-borders)] shadow-md">
             <MapContainer center={[mapCenter.lat, mapCenter.lng]} zoom={11} style={{ height: '100%', width: '100%' }}>
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
